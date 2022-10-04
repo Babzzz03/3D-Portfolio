@@ -27,9 +27,12 @@ export default class Resources extends EventEmitter {
   }
   startLoading() {
     for (const asset of this.assets) {
+ console.log(asset);
       if (asset.type === "glbModel") {
         this.loaders.gltfLoader.load(asset.path, (file) => {
           this.singleAssetLoaded(asset, file);
+         
+         console.log(this.singleAssetLoaded(asset, file));
         });
       } else if (asset.type === "videoTexture") {
         this.video = {};

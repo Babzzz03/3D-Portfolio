@@ -9,6 +9,7 @@ import Theme from './Theme.js';
 
 import Renderer from './Renderer.js'
 import World from './World/World';
+import Preloader from "./Preloader.js";
 export default class Experience {
   static instance;
   constructor(canvas) {
@@ -25,6 +26,7 @@ export default class Experience {
     this.resources = new Resources(assets);
     this.theme = new Theme();
     this.world = new World();
+    // this.Preloader = new Preloader(); 
 	this.time.on("resize", () => {
       this.resize();
     });
